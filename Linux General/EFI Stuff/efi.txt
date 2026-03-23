@@ -1,0 +1,15 @@
+Creating New Boot Entries
+Creating a new boot entry requires several parameters. Here’s the basic syntax:
+
+sudo efibootmgr -c -d /dev/sdX -p Y -L "Boot Label" -l "\EFI\path\to\bootloader.efi"
+
+Example: Creating a Ubuntu Boot Entry
+sudo efibootmgr -c -d /dev/sda -p 1 -L "Ubuntu 22.04" -l "\EFI\ubuntu\grubx64.efi"
+
+Parameters explained:Software
+
+-c: Create a new entry
+-d /dev/sda: Boot device
+-p 1: EFI system partition number
+-L "Ubuntu 22.04": Boot entry label
+-l "\EFI\ubuntu\grubx64.efi": Path to bootloader
